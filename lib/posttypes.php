@@ -73,7 +73,7 @@ function ffw_events_get_default_labels() {
 	   'singular' => __( 'Event', 'FFW_events' ),
 	   'plural' => __( 'Events', 'FFW_events')
 	);
-	return apply_filters( 'ffw_events_default_events_name', $defaults );
+	return apply_filters( 'ffw_events_default_name', $defaults );
 }
 
 /**
