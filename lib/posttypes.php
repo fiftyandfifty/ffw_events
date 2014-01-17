@@ -50,6 +50,8 @@ function setup_ffw_events_post_types() {
 		'publicly_queryable'=> true,
 		'show_ui' 			=> true,
 		'show_in_menu' 		=> true,
+		'menu_position'     => '34.3',
+		'menu_icon'			=> 'dashicons-calendar',
 		'query_var' 		=> true,
 		'rewrite' 			=> $rewrite,
 		'map_meta_cap'      => true,
