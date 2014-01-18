@@ -1,8 +1,8 @@
 <?php 
 /**
- * Plugin Name: Fifty Framework Staff
+ * Plugin Name: FFW Events
  * Plugin URI: http://fiftyandfifty.org
- * Description: Build events pages for your site
+ * Description: Lightweight way to add events to your site.
  * Version: 1.0
  * Author: Fifty and Fifty
  * Author URI: http://labs.fiftyandfifty.org
