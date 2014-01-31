@@ -71,7 +71,7 @@ function ffw_events_meta_box_save( $post_id) {
 
         $final_start_date_time = mktime( $ffw_events_start_hour, $ffw_events_start_minute, 0, $ffw_events_start_month, $ffw_events_start_day, $ffw_events_start_year );
 
-        update_post_meta($post_id, 'ffw_events_start_date_time', $final_start_date_time);
+        update_post_meta( $post_id, 'ffw_events_start_date_time', $final_start_date_time);
         update_post_meta( $post_id, 'ffw_events_start_day', date( 'D', strtotime( $ffw_events_start_date ) ) );
         update_post_meta( $post_id, 'ffw_events_start_day_of_month', $ffw_events_start_day );
         update_post_meta( $post_id, 'ffw_events_start_month', $ffw_events_start_month );
@@ -131,7 +131,13 @@ function fw_events_render_meta_box() {
 
 function ffw_events_render_fields( $post )
 {
-    global $post, $ffw_events_settings;
+    global $post, $ffw_events_settings; 
+
+    /*$postmeta_check = get_post_meta($post->ID);
+    echo '<pre>';
+    var_dump($postmeta_check);
+    echo '</pre>';*/
+
 
     // $ffw_events_all_day        = get_post_meta( $post->ID, 'ffw_events_all_day', true );
     $ffw_events_start_date     = get_post_meta( $post->ID, 'ffw_events_start_date', true );
