@@ -3,6 +3,10 @@
 
 Light weight events plugin
 
+````
+the_ffw_events_date_time_formatted($format);
+````
+
 
 ### Changelog
 
