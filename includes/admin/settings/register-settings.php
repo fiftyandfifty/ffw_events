@@ -153,6 +153,12 @@ function ffw_events_get_registered_settings() {
                     'size' => 'medium',
                     'std' => ffw_events_get_label_singular()
                 ),
+                'archive_image_url' => array(
+                    'id' => 'archive_image_url',
+                    'name' => __( 'Archive Header Image', 'ffw_events' ),
+                    'desc' => __( 'Select the default header image for the archive page. Note: Currently this won\'t crop properly'  , 'ffw_staff' ),
+                    'type' => 'upload',
+                )
             )
         ),
         

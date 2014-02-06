@@ -28,6 +28,26 @@ function ffw_events_load_admin_scripts( $hook )
     wp_register_style( 'ffw-events-datepicker-style', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css', false, FFW_EVENTS_VERSION, false );
     
 
+    wp_enqueue_script( 'ffw-events-admin' );
+    wp_localize_script( 'ffw-events-admin', 'ffw_events_vars', array(
+        'new_media_ui'            => apply_filters( 'ffw_events_use_35_media_ui', 1 ),
+        ) 
+    );
+
+    if ( $hook == $ffw_events_settings_page ) {
+        wp_enqueue_style( 'wp-color-picker' );
+        wp_enqueue_script( 'wp-color-picker' );
+        wp_enqueue_style( 'colorbox', $css_dir . 'colorbox.css', array(), '1.3.20' );
+        wp_enqueue_script( 'colorbox', $js_dir . 'jquery.colorbox-min.js', array( 'jquery' ), '1.3.20' );
+        if( function_exists( 'wp_enqueue_media' ) && version_compare( $wp_version, '3.5', '>=' ) ) {
+            //call for new media manager
+            wp_enqueue_media();
+        }
+    }
+
+
+
+
     wp_enqueue_script( 'jquery-ui-datepicker');
     wp_enqueue_script( 'ffw-events-admin' );
 

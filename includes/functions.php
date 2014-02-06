@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 function ffw_event_query_by_date( $query ) {
     
-    global $ffw_staff_settings;
+    global $ffw_events_settings;
 
     if ( is_admin() || ! $query->is_main_query() )
         return;
@@ -159,4 +159,16 @@ function the_ffw_events_date_time_formatted( $args=null )
 
 
 
+/**
+ * Returns URL from the settings page
+ * 
+ * @return [string] [the url of the media file]
+ */
+function get_events_archive_image()
+{
+    global $ffw_events_settings;
 
+    $archive_image = isset( $ffw_events_settings['archive_image_url'] ) ? $ffw_events_settings['archive_image_url'] : '';
+    
+    return $archive_image;
+}
