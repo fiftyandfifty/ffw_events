@@ -127,7 +127,7 @@ function ffw_events_get_registered_settings() {
                 'basic_settings' => array(
                     'id' => 'basic_settings',
                     'name' => '<strong>' . __( 'Basic Settings', 'ffw_events' ) . '</strong>',
-                    'desc' => '',
+                    'desc' => '<hr>',
                     'type' => 'header'
                 ),
                 'events_slug' => array(
@@ -167,25 +167,25 @@ function ffw_events_get_registered_settings() {
             array(
                 'basic_page_settings' => array(
                     'id' => 'basic_page_settings',
-                    'name' => '<strong>' . __( 'Basic Page Settings', 'ffw_events' ) . '</strong>',
-                    'desc' => '',
+                    'name' => '<strong>' . __( 'Basic Archive Page Settings', 'ffw_events' ) . '</strong>',
+                    'desc' => '<hr>',
                     'type' => 'header'
                 ),
                 'archive_title' => array(
                     'id' => 'archive_title',
-                    'name' => '<strong>' . __( 'Storybook Title', 'ffw_events' ) . '</strong>',
+                    'name' => '<strong>' . __( 'Archive Title', 'ffw_events' ) . '</strong>',
                     'desc' => 'Enter a title',
                     'type' => 'text'
                 ),
                 'archive_content' => array(
                     'id' => 'archive_content',
-                    'name' => '<strong>' . __( 'Main Page Content', 'ffw_events' ) . '</strong>',
+                    'name' => '<strong>' . __( 'Archive Page Content', 'ffw_events' ) . '</strong>',
                     'desc' => '',
                     'type' => 'rich_editor'
                 ),
                 'archive_excerpt' => array(
                     'id' => 'archive_excerpt',
-                    'name' => '<strong>' . __( 'Page Excerpt/Description', 'ffw_events' ) . '</strong>',
+                    'name' => '<strong>' . __( 'Archive Page Excerpt', 'ffw_events' ) . '</strong>',
                     'desc' => '',
                     'type' => 'textarea'
                 ),
