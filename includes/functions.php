@@ -172,3 +172,58 @@ function get_events_archive_image()
     
     return $archive_image;
 }
+
+
+
+
+
+
+
+
+/**
+ * Grab the title set in the settings
+ *
+ * @return [string] [description]
+ */
+function ffw_events_the_archive_title()
+{
+    global $ffw_events_settings;
+
+    $archive_title = isset( $ffw_events_settings['archive_title'] ) ? $ffw_events_settings['archive_title'] : 'Events';
+
+    echo $archive_title; 
+}
+
+
+/**
+ * Grab the content set in page settings
+ *
+ * @return [string] [description]
+ */
+function ffw_events_the_archive_content()
+{
+    global $ffw_events_settings;
+
+    $archive_content = isset( $ffw_events_settings['archive_content'] ) ? $ffw_events_settings['archive_content'] : '';
+
+    echo $archive_content; 
+}
+
+
+/**
+ * Grab the excerpt section set in page settings
+ * 
+ * @return [string]
+ */
+function ffw_events_the_archive_excerpt()
+{
+    global $ffw_events_settings;
+
+    $archive_excerpt = isset( $ffw_events_settings['archive_excerpt'] ) ? $ffw_events_settings['archive_excerpt'] : '';
+
+    echo $archive_excerpt; 
+
+}
+
+
+

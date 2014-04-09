@@ -41,10 +41,11 @@ function ffw_events_get_settings() {
 
         // Update old settings with new single option
 
-        $general_settings = is_array( get_option( 'ffw_events_settings_general' ) )    ? get_option( 'ffw_events_settings_general' )      : array();
+        $general_settings = is_array( get_option( 'ffw_events_settings_general' ) ) ? get_option( 'ffw_events_settings_general' ) : array();
+        $archive_settings = is_array( get_option( 'ffw_events_settings_page' ) ) ? get_option( 'ffw_events_settings_page' ) : array();
 
 
-        $settings = array_merge( $general_settings );
+        $settings = array_merge( $general_settings, $archive_settings );
 
         update_option( 'ffw_events_settings', $settings );
     }
@@ -159,6 +160,36 @@ function ffw_events_get_registered_settings() {
                     'desc' => __( 'Select the default header image for the archive page. Note: Currently this won\'t crop properly'  , 'ffw_staff' ),
                     'type' => 'upload',
                 )
+            )
+        ),
+        /** Archive Page Controls */
+        'archive_settings' => apply_filters( 'ffw_events_settings_page',
+            array(
+                'basic_page_settings' => array(
+                    'id' => 'basic_page_settings',
+                    'name' => '<strong>' . __( 'Basic Page Settings', 'ffw_events' ) . '</strong>',
+                    'desc' => '',
+                    'type' => 'header'
+                ),
+                'archive_title' => array(
+                    'id' => 'archive_title',
+                    'name' => '<strong>' . __( 'Storybook Title', 'ffw_events' ) . '</strong>',
+                    'desc' => 'Enter a title',
+                    'type' => 'text'
+                ),
+                'archive_content' => array(
+                    'id' => 'archive_content',
+                    'name' => '<strong>' . __( 'Main Page Content', 'ffw_events' ) . '</strong>',
+                    'desc' => '',
+                    'type' => 'rich_editor'
+                ),
+                'archive_excerpt' => array(
+                    'id' => 'archive_excerpt',
+                    'name' => '<strong>' . __( 'Page Excerpt/Description', 'ffw_events' ) . '</strong>',
+                    'desc' => '',
+                    'type' => 'textarea'
+                ),
+                
             )
         ),
         
@@ -625,6 +656,7 @@ function ffw_events_get_settings_tabs() {
 
     $tabs            = array();
     $tabs['general'] = __( 'General', 'ffw_events' );
+    $tabs['archive_settings'] = __( 'Archive Settings', 'ffw_events' );
 
     return apply_filters( 'ffw_events_settings_tabs', $tabs );
 }
