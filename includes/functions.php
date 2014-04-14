@@ -176,10 +176,6 @@ function get_events_archive_image()
 
 
 
-
-
-
-
 /**
  * Grab the title set in the settings
  *
@@ -221,7 +217,7 @@ function ffw_events_the_archive_excerpt()
 
     $archive_excerpt = isset( $ffw_events_settings['archive_excerpt'] ) ? $ffw_events_settings['archive_excerpt'] : '';
 
-    echo $archive_excerpt; 
+    echo esc_textarea( stripslashes( $archive_excerpt ) ); 
 
 }
 
